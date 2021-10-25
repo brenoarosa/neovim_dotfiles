@@ -1,19 +1,12 @@
 local nnoremap = require("utils").nnoremap
 local nvimtree = require("nvim-tree")
-local view = require("nvim-tree.view")
 
-_G.NvimTreeConfig = {}
-
-function NvimTreeConfig.find_toggle()
-  if view.win_open() then
-    view.close()
-  else
-    vim.cmd("NvimTreeFindFile")
-  end
-end
-
-nnoremap("<leader>k", "<CMD>lua NvimTreeConfig.find_toggle()<CR>")
+nnoremap("<leader>k", ":NvimTreeToggle<CR>")
 
 nvimtree.setup {
-  open_on_tab = true
+  auto_close = true,
+  open_on_tab = true,
+  update_focused_file = {
+    enable = true
+  }
 }
