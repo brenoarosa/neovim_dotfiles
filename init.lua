@@ -36,6 +36,7 @@ end
 ---------------------------------------------------------------------------------------------------
 cmd [[syntax on]]
 opt.mouse = "a" -- set mouse mode to all modes
+opt.clipboard = "unnamedplus" -- MacOS clipboard unification
 
 opt.number = true -- show line numbers
 opt.showmode = true -- don't show which mode disabled for PowerLine
