@@ -65,7 +65,7 @@ opt.listchars = {
 }
 
 -- timeout to sequence chars
-opt.timeoutlen = 500
+opt.timeoutlen = 1000
 
 -- Mappings
 ---------------------------------------------------------------------------------------------------
