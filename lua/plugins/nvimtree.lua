@@ -14,4 +14,6 @@ end
 
 nnoremap("<leader>k", "<CMD>lua NvimTreeConfig.find_toggle()<CR>")
 
-nvimtree.setup()
+nvimtree.setup {
+  open_on_tab = true
+}
