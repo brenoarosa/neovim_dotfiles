@@ -71,12 +71,14 @@ opt.timeoutlen = 1000
 ---------------------------------------------------------------------------------------------------
 g.mapleader = ","
 opt.pastetoggle = "<F2>"
-nnoremap("<F3>",":set number!<CR>")
+nnoremap("<F3>", ":set number!<CR>")
 -- Just a debugging
-nnoremap("<leader>?",":echo(\"<leader> works! It is set to <leader>\")<CR>")
+nnoremap("<leader>?", ":echo(\"<leader> works! It is set to <leader>\")<CR>")
 -- insert lines
-nnoremap("<C-j>"," :set paste<CR>m`o<Esc>``:set nopaste<CR>")
+nnoremap("<C-j>", ":set paste<CR>m`o<Esc>``:set nopaste<CR>")
 nnoremap("<C-k>", ":set paste<CR>m`O<Esc>``:set nopaste<CR>")
+-- remove current search hightlight
+nnoremap("<C-l>", ":noh<CR>")
 ---------------------------------------------------------------------------------------------------
 
 require("plugins")
