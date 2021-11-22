@@ -37,6 +37,9 @@ cmd [[Plug 'nvim-telescope/telescope-fzy-native.nvim']]
 -- file navigator
 cmd [[Plug 'kyazdani42/nvim-tree.lua']]
 
+-- git plugin
+cmd [[Plug 'airblade/vim-gitgutter']]
+
 plugEnd()
 
 g.airline_powerline_fonts = true
