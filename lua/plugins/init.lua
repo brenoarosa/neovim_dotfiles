@@ -40,6 +40,9 @@ cmd [[Plug 'kyazdani42/nvim-tree.lua']]
 -- git plugin
 cmd [[Plug 'airblade/vim-gitgutter']]
 
+-- return to last cursor position when reopenning files
+cmd [[Plug 'farmergreg/vim-lastplace']]
+
 plugEnd()
 
 g.airline_powerline_fonts = true
