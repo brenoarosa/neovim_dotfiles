@@ -16,8 +16,11 @@ Upgrade plugins: `:PlugUpdate`
 Dependes on a "patched" font. One that supports <https://github.com/kyazdani42/nvim-web-devicons>.  
 Also depends on powerline font.
 
-Currently iTerm2 font config:
+Currently iTerm2 font config:  
 Monaco 13 + Non-ASCII: mononoki NF 14
+
+Currently Gnome Terminal font config:  
+Cousine Nerd Font 11 (legible at 12 but also good at 11)
 
 Install powerline fonts:
 - Linux: [fonts-powerline](https://packages.debian.org/sid/fonts-powerline)
