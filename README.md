@@ -25,3 +25,8 @@ Cousine Nerd Font 11 (legible at 12 but also good at 11)
 Install powerline fonts:
 - Linux: [fonts-powerline](https://packages.debian.org/sid/fonts-powerline)
 - MacOS: prefer brew when installing fonts
+
+### Language Servers
+
+Validated with :LspInfo with a file of the chosen language.  
+**Python** - [Jedi Language Server](https://github.com/pappasam/jedi-language-server) follow server install instructions.

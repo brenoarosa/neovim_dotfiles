@@ -43,6 +43,9 @@ cmd [[Plug 'airblade/vim-gitgutter']]
 -- return to last cursor position when reopenning files
 cmd [[Plug 'farmergreg/vim-lastplace']]
 
+-- LSP
+cmd [[Plug 'neovim/nvim-lspconfig']]
+
 plugEnd()
 
 g.airline_powerline_fonts = true
@@ -56,3 +59,4 @@ nnoremap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 nnoremap("<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
 
 require("plugins.nvimtree")
+require("plugins.lsp")
