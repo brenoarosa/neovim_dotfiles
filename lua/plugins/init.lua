@@ -46,6 +46,9 @@ cmd [[Plug 'farmergreg/vim-lastplace']]
 -- LSP
 cmd [[Plug 'neovim/nvim-lspconfig']]
 
+-- Adds LSP functionality to non-language servers: like linters and formatters
+cmd [[Plug 'jose-elias-alvarez/null-ls.nvim']]
+
 plugEnd()
 
 g.airline_powerline_fonts = true
