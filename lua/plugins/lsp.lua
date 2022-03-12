@@ -26,11 +26,6 @@ null_ls.setup({
     null_ls.builtins.diagnostics.pylint,
     -- null_ls.builtins.diagnostics.mypy, -- not working for some unknow reason
   },
-  log = {
-    enable = false, -- writes to ~/.cache
-    level = "warn",
-    use_console = "async",
-  },
 })
 
 -- Toggle diagnostics helper
