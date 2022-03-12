@@ -29,23 +29,15 @@ null_ls.setup({
 })
 
 -- Toggle diagnostics helper
-g.diagnostics_active = true -- couldn't make it start disabled
+vim.diagnostic.disable()
+g.diagnostics_active = false
 function _G.toggle_diagnostics()
   if g.diagnostics_active then
     g.diagnostics_active = false
     vim.diagnostic.disable()
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
   else
     g.diagnostics_active = true
     vim.diagnostic.enable()
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-      vim.lsp.diagnostic.on_publish_diagnostics, {
-        underline = true,
-        virtual_text = true,
-        signs = true,
-        update_in_insert = false,
-      }
-    )
   end
 end
 
