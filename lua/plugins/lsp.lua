@@ -24,7 +24,7 @@ null_ls.setup({
   sources = {
     null_ls.builtins.formatting.black, -- requires black 21.4b0+
     null_ls.builtins.diagnostics.pylint,
-    -- null_ls.builtins.diagnostics.mypy, -- not working for some unknow reason
+    null_ls.builtins.diagnostics.mypy,
   },
 })
 
