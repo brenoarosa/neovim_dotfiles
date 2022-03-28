@@ -22,7 +22,11 @@ nvim_lsp.jedi_language_server.setup {
 null_ls.setup({
   debug = false,
   sources = {
-    -- overwrite commands to call via python -m (respecting PEP582)
+    -- =================================== PYTHON ==================================================
+    -- overwrite commands to call via `python -m <CMD>`
+    -- This enables PDM PEP582 implementation that sets PYTHONPATH but don't changes PATH
+    -- most binaries that would be installed on a venv should work with `python -m`
+
     -- requires black 21.4b0+
     null_ls.builtins.formatting.black.with({
       command = "python",
@@ -51,6 +55,9 @@ null_ls.setup({
         }
       end,
     }),
+
+    -- =================================== GOLANG ==================================================
+    null_ls.builtins.formatting.gofmt,
   },
 })
 
