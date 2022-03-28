@@ -46,7 +46,7 @@ opt.incsearch = true -- set incremental search, like modern browsers
 -- toggle invisible characters
 opt.list = true
 opt.listchars = {
-  tab = "→ ",
+  tab = "  ",
   trail = "⋅",
   extends = "❯",
   precedes = "❮"

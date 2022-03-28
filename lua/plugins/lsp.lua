@@ -22,9 +22,35 @@ nvim_lsp.jedi_language_server.setup {
 null_ls.setup({
   debug = false,
   sources = {
-    null_ls.builtins.formatting.black, -- requires black 21.4b0+
-    null_ls.builtins.diagnostics.pylint,
-    null_ls.builtins.diagnostics.mypy,
+    -- overwrite commands to call via python -m (respecting PEP582)
+    -- requires black 21.4b0+
+    null_ls.builtins.formatting.black.with({
+      command = "python",
+      args = { "-m", "black", "--stdin-filename", "$FILENAME", "--quiet", "-", }, }),
+    null_ls.builtins.diagnostics.pylint.with({
+      command = "python",
+      args = { "-m", "pylint", "--from-stdin", "$FILENAME", "-f", "json" },
+    }),
+    null_ls.builtins.diagnostics.mypy.with({
+      command = "python",
+      args = function(params)
+          return {
+            "-m",
+            "mypy",
+            "--hide-error-codes",
+            "--hide-error-context",
+            "--no-color-output",
+            "--show-column-numbers",
+            "--show-error-codes",
+            "--no-error-summary",
+            "--no-pretty",
+            "--shadow-file",
+            params.bufname,
+            params.temp_path,
+            params.bufname,
+        }
+      end,
+    }),
   },
 })
 
