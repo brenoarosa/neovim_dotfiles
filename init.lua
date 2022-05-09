@@ -21,7 +21,11 @@ local omap = utils.omap
 ---------------------------------------------------------------------------------------------------
 cmd [[syntax on]]
 opt.mouse = "a" -- set mouse mode to all modes
-opt.clipboard = "unnamedplus" -- MacOS clipboard unification
+
+-- install wl-clipboard on Wayland
+-- install xclip on X11
+-- MacOS clipboard OK
+opt.clipboard = "unnamedplus"
 
 opt.number = true -- show line numbers
 opt.showmode = true -- don't show which mode disabled for PowerLine
