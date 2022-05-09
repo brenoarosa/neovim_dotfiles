@@ -3,7 +3,6 @@ local g = vim.g
 local fn = vim.fn
 local utils = require("utils")
 local nmap = utils.nmap
-local nnoremap = utils.nnoremap
 
 local plugBegin = fn["plug#begin"]
 local plugEnd = fn["plug#end"]
@@ -56,10 +55,11 @@ g["airline#extensions#tabline#enabled"] = true
 g["airline#extensions#tabline#show_buffers"] = false
 g["airline#extensions#tabline#tab_nr_type"] = 1 -- tab number
 
-nnoremap("<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>")
-nnoremap("<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
-nnoremap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
-nnoremap("<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
+local telescope_builtin = require('telescope.builtin')
+vim.keymap.set("n", "<leader>ff", telescope_builtin.find_files)
+vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep)
+vim.keymap.set("n", "<leader>fb", telescope_builtin.buffers)
+vim.keymap.set("n", "<leader>fh", telescope_builtin.help_tags)
 
 require("telescope").load_extension("fzy_native")
 require("plugins.nvimtree")

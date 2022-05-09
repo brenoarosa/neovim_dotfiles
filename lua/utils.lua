@@ -2,9 +2,9 @@ local api = vim.api
 local fn = vim.fn
 local utils = {}
 
--- thanks to
--- https://github.com/akinsho/dotfiles/blob/main/.config/nvim/lua/as/globals.lua
--- for inspiration
+-- DEPRECATING SINCE NeoVim 0.7 (https://gpanders.com/blog/whats-new-in-neovim-0-7)
+-- Replacing with: vim.keymap.set("n", "<leader>.", function() print("Hello World!") end)
+-- thanks to https://github.com/akinsho/dotfiles/blob/main/.config/nvim/lua/as/globals.lua for inspiration
 local function make_keymap_fn(mode, o)
   -- copy the opts table as extends will mutate opts
   local parent_opts = vim.deepcopy(o)

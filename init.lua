@@ -16,9 +16,6 @@ local vmap = utils.vmap
 local imap = utils.imap
 local xmap = utils.xmap
 local omap = utils.omap
-local nnoremap = utils.nnoremap
-local inoremap = utils.inoremap
-local vnoremap = utils.vnoremap
 
 -- General
 ---------------------------------------------------------------------------------------------------
@@ -59,14 +56,14 @@ opt.timeoutlen = 1000
 ---------------------------------------------------------------------------------------------------
 g.mapleader = ","
 opt.pastetoggle = "<F2>"
-nnoremap("<F3>", ":set number!<CR>")
+vim.keymap.set("n", "<F3>", ":set number!<CR>")
 -- Just a debugging
-nnoremap("<leader>?", ":echo(\"<leader> works! It is set to <leader>\")<CR>")
+vim.keymap.set("n", "<leader>?", ":echo(\"<leader> works! It is set to <leader>\")<CR>")
 -- insert lines
-nnoremap("<C-j>", ":set paste<CR>m`o<Esc>``:set nopaste<CR>")
-nnoremap("<C-k>", ":set paste<CR>m`O<Esc>``:set nopaste<CR>")
+vim.keymap.set("n", "<C-j>", ":set paste<CR>m`o<Esc>``:set nopaste<CR>")
+vim.keymap.set("n", "<C-k>", ":set paste<CR>m`O<Esc>``:set nopaste<CR>")
 -- remove current search hightlight
-nnoremap("<C-l>", ":noh<CR>")
+vim.keymap.set("n", "<C-l>", ":noh<CR>")
 ---------------------------------------------------------------------------------------------------
 
 require("plugins")

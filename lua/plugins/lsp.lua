@@ -1,7 +1,6 @@
 local g = vim.g
 local nvim_lsp = require("lspconfig")
 local null_ls = require("null-ls")
-local nnoremap = require("utils").nnoremap
 
 -- Jedi
 nvim_lsp.jedi_language_server.setup {
@@ -74,5 +73,5 @@ function _G.toggle_diagnostics()
   end
 end
 
-nnoremap("<leader>c", "<cmd>lua toggle_diagnostics()<CR>")
-nnoremap("<leader>f", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>")
+vim.keymap.set("n", "<leader>c", toggle_diagnostics)
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting_sync)

@@ -1,4 +1,3 @@
-local nnoremap = require("utils").nnoremap
 local nvimtree = require("nvim-tree")
 
 nvimtree.setup {
@@ -9,4 +8,4 @@ nvimtree.setup {
   }
 }
 
-nnoremap("<leader>k", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>k", function() nvimtree.toggle(false) end)
