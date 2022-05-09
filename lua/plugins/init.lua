@@ -1,59 +1,55 @@
-local cmd = vim.cmd
-local g = vim.g
-local fn = vim.fn
 local utils = require("utils")
-local nmap = utils.nmap
 
-local plugBegin = fn["plug#begin"]
-local plugEnd = fn["plug#end"]
+local plugBegin = vim.fn["plug#begin"]
+local plugEnd = vim.fn["plug#end"]
 
 plugBegin("~/.config/nvim/plugged")
 -- NOTE: the argument passed to Plug has to be wrapped with single-quotes
 
 -- mappings to easily delete, change and add such surroundings in pairs, such as quotes, parens, etc.
-cmd [[Plug 'tpope/vim-surround']]
+vim.cmd [[Plug 'tpope/vim-surround']]
 
 -- enables repeating other supported plugins with the . command
-cmd [[Plug 'tpope/vim-repeat']]
+vim.cmd [[Plug 'tpope/vim-repeat']]
 
 -- editorconfig
-cmd [[Plug 'editorconfig/editorconfig-vim']]
+vim.cmd [[Plug 'editorconfig/editorconfig-vim']]
 
 -- airline plugin
-cmd [[Plug 'vim-airline/vim-airline']]
+vim.cmd [[Plug 'vim-airline/vim-airline']]
 
 -- colorscheme
-cmd [[Plug 'flazz/vim-colorschemes']]
+vim.cmd [[Plug 'flazz/vim-colorschemes']]
 
 -- icons
-cmd [[Plug 'kyazdani42/nvim-web-devicons']]
+vim.cmd [[Plug 'kyazdani42/nvim-web-devicons']]
 
 -- telescope file finder / preview
-cmd [[Plug 'nvim-lua/plenary.nvim']]
-cmd [[Plug 'nvim-telescope/telescope.nvim']]
-cmd [[Plug 'nvim-telescope/telescope-fzy-native.nvim']]
+vim.cmd [[Plug 'nvim-lua/plenary.nvim']]
+vim.cmd [[Plug 'nvim-telescope/telescope.nvim']]
+vim.cmd [[Plug 'nvim-telescope/telescope-fzy-native.nvim']]
 
 -- file navigator
-cmd [[Plug 'kyazdani42/nvim-tree.lua']]
+vim.cmd [[Plug 'kyazdani42/nvim-tree.lua']]
 
 -- git plugin
-cmd [[Plug 'airblade/vim-gitgutter']]
+vim.cmd [[Plug 'airblade/vim-gitgutter']]
 
 -- return to last cursor position when reopenning files
-cmd [[Plug 'farmergreg/vim-lastplace']]
+vim.cmd [[Plug 'farmergreg/vim-lastplace']]
 
 -- LSP
-cmd [[Plug 'neovim/nvim-lspconfig']]
+vim.cmd [[Plug 'neovim/nvim-lspconfig']]
 
 -- Adds LSP functionality to non-language servers: like linters and formatters
-cmd [[Plug 'jose-elias-alvarez/null-ls.nvim']]
+vim.cmd [[Plug 'jose-elias-alvarez/null-ls.nvim']]
 
 plugEnd()
 
-g.airline_powerline_fonts = true
-g["airline#extensions#tabline#enabled"] = true
-g["airline#extensions#tabline#show_buffers"] = false
-g["airline#extensions#tabline#tab_nr_type"] = 1 -- tab number
+vim.g.airline_powerline_fonts = true
+vim.g["airline#extensions#tabline#enabled"] = true
+vim.g["airline#extensions#tabline#show_buffers"] = false
+vim.g["airline#extensions#tabline#tab_nr_type"] = 1 -- tab number
 
 local telescope_builtin = require('telescope.builtin')
 vim.keymap.set("n", "<leader>ff", telescope_builtin.find_files)

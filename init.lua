@@ -3,50 +3,39 @@
 -- based on https://github.com/nicknisi/dotfiles
 
 require("globals")
-local opt = vim.opt
-local cmd = vim.cmd
-local g = vim.g
-local o = vim.o
-local fn = vim.fn
-local env = vim.env
 local utils = require("utils")
 local termcodes = utils.termcodes
-local nmap = utils.nmap
-local vmap = utils.vmap
-local imap = utils.imap
-local xmap = utils.xmap
-local omap = utils.omap
 
 -- General
 ---------------------------------------------------------------------------------------------------
-cmd [[syntax on]]
-opt.mouse = "a" -- set mouse mode to all modes
+vim.cmd [[syntax on]]
+vim.opt.mouse = "a" -- set mouse mode to all modes
 
 -- install wl-clipboard on Wayland
 -- install xclip on X11
 -- MacOS clipboard OK
-opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 
-opt.number = true -- show line numbers
-opt.showmode = true -- don't show which mode disabled for PowerLine
-opt.autoread = true -- Reread file when only modified externaly
+vim.opt.number = true -- show line numbers
+vim.opt.showmode = true -- don't show which mode disabled for PowerLine
+vim.opt.autoread = true -- Reread file when only modified externaly
 
-opt.cursorline = true
-opt.scrolloff = 3 -- set 3 lines to the cursors - when moving vertical
+vim.opt.cursorline = true
+vim.opt.scrolloff = 3 -- set 3 lines to the cursors - when moving vertical
 
-opt.tabstop = 4 -- the visible width of tabs
-opt.softtabstop = 4 -- edit as if the tabs are 4 characters wide
-opt.shiftwidth = 4 -- number of spaces to use for indent and unindent
-opt.expandtab = true -- show line numbers
--- opt.smarttab = true -- tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
--- opt.shiftround = true -- round indent to a multiple of 'shiftwidth'
+vim.opt.tabstop = 4 -- the visible width of tabs
+vim.opt.softtabstop = 4 -- edit as if the tabs are 4 characters wide
+vim.opt.shiftwidth = 4 -- number of spaces to use for indent and unindent
+vim.opt.expandtab = true -- show line numbers
+-- vim.opt.smarttab = true -- tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
+-- vim.opt.shiftround = true -- round indent to a multiple of 'shiftwidth'
 
-opt.hlsearch = true -- highlight search results
-opt.incsearch = true -- set incremental search, like modern browsers
+vim.opt.hlsearch = true -- highlight search results
+vim.opt.incsearch = true -- set incremental search, like modern browsers
 
 -- toggle invisible characters
-opt.list = true
-opt.listchars = {
+vim.opt.list = true
+vim.opt.listchars = {
   tab = "  ",
   trail = "⋅",
   extends = "❯",
@@ -54,13 +43,13 @@ opt.listchars = {
 }
 
 -- timeout to sequence chars
-opt.timeoutlen = 1000
+vim.opt.timeoutlen = 1000
 
 -- Mappings
 ---------------------------------------------------------------------------------------------------
-g.mapleader = ","
-opt.pastetoggle = "<F2>"
-vim.keymap.set("n", "<F3>", ":set number!<CR>")
+vim.g.mapleader = ","
+vim.opt.pastetoggle = "<F2>"
+vim.keymap.set("n", "<F3>", function() vim.opt.number = (not vim.opt.number:get()) end)
 -- Just a debugging
 vim.keymap.set("n", "<leader>?", ":echo(\"<leader> works! It is set to <leader>\")<CR>")
 -- insert lines
@@ -71,4 +60,4 @@ vim.keymap.set("n", "<C-l>", ":noh<CR>")
 ---------------------------------------------------------------------------------------------------
 
 require("plugins")
-cmd [[colorscheme jelleybeans]]
+vim.cmd [[colorscheme jelleybeans]]
