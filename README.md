@@ -30,3 +30,8 @@ Install powerline fonts:
 
 Validated with :LspInfo with a file of the chosen language.  
 **Python** - [Jedi Language Server](https://github.com/pappasam/jedi-language-server) follow server install instructions.
+
+### Copy/Paste
+
+On Linux, depends on `wl-clipboard` on Wayland and `xclip` on X11.  
+No changes necessary on MacOS.
