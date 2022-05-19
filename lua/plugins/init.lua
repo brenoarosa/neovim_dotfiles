@@ -15,6 +15,15 @@ vim.cmd [[Plug 'tpope/vim-repeat']]
 -- editorconfig
 vim.cmd [[Plug 'editorconfig/editorconfig-vim']]
 
+-- git plugin
+vim.cmd [[Plug 'airblade/vim-gitgutter']]
+
+-- return to last cursor position when reopenning files
+vim.cmd [[Plug 'farmergreg/vim-lastplace']]
+
+-- Easy comment and uncoment
+vim.cmd [[Plug 'terrortylor/nvim-comment']]
+
 -- airline plugin
 vim.cmd [[Plug 'vim-airline/vim-airline']]
 
@@ -32,12 +41,6 @@ vim.cmd [[Plug 'nvim-telescope/telescope-fzy-native.nvim']]
 -- file navigator
 vim.cmd [[Plug 'kyazdani42/nvim-tree.lua']]
 
--- git plugin
-vim.cmd [[Plug 'airblade/vim-gitgutter']]
-
--- return to last cursor position when reopenning files
-vim.cmd [[Plug 'farmergreg/vim-lastplace']]
-
 -- LSP
 vim.cmd [[Plug 'neovim/nvim-lspconfig']]
 
@@ -45,6 +48,8 @@ vim.cmd [[Plug 'neovim/nvim-lspconfig']]
 vim.cmd [[Plug 'jose-elias-alvarez/null-ls.nvim']]
 
 plugEnd()
+
+require('nvim_comment').setup()
 
 vim.g.airline_powerline_fonts = true
 vim.g["airline#extensions#tabline#enabled"] = true
