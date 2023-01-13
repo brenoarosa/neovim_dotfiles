@@ -32,6 +32,7 @@ null_ls.setup({
     null_ls.builtins.diagnostics.pylint.with({
       command = "python",
       args = { "-m", "pylint", "--from-stdin", "$FILENAME", "-f", "json" },
+
     }),
     null_ls.builtins.diagnostics.mypy.with({
       command = "python",
@@ -73,4 +74,4 @@ function _G.toggle_diagnostics()
 end
 
 vim.keymap.set("n", "<leader>c", toggle_diagnostics)
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting_sync)
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
