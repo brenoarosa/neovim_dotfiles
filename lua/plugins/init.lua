@@ -39,7 +39,8 @@ vim.cmd [[Plug 'nvim-telescope/telescope.nvim']]
 vim.cmd [[Plug 'nvim-telescope/telescope-fzy-native.nvim']]
 
 -- file navigator
-vim.cmd [[Plug 'kyazdani42/nvim-tree.lua']]
+vim.cmd [[Plug 'nvim-tree/nvim-tree.lua']]
+vim.cmd [[Plug 'nvim-tree/nvim-web-devicons']]
 
 -- LSP
 vim.cmd [[Plug 'neovim/nvim-lspconfig']]

@@ -1,11 +1,11 @@
 local nvimtree = require("nvim-tree")
+local nvimtree_api = require("nvim-tree.api")
 
 nvimtree.setup {
-  -- auto_close = true,
   open_on_tab = true,
   update_focused_file = {
     enable = true
   }
 }
 
-vim.keymap.set("n", "<leader>k", function() nvimtree.toggle(false) end)
+vim.keymap.set("n", "<leader>k", function() nvimtree_api.tree.toggle(false) end)
