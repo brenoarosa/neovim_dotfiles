@@ -48,7 +48,6 @@ vim.opt.timeoutlen = 1000
 -- Mappings
 ---------------------------------------------------------------------------------------------------
 vim.g.mapleader = ","
-vim.opt.pastetoggle = "<F2>"
 vim.keymap.set("n", "<F3>", function() vim.opt.number = (not vim.opt.number:get()) end)
 -- Just a debugging
 vim.keymap.set("n", "<leader>?", ":echo(\"<leader> works! It is set to <leader>\")<CR>")
