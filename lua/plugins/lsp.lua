@@ -2,12 +2,12 @@ local nvim_lsp = require("lspconfig")
 local null_ls = require("null-ls")
 
 -- Toggle diagnostics helper
-vim.diagnostic.disable()
+vim.diagnostic.enable(false)
 vim.g.diagnostics_active = false
 function _G.toggle_diagnostics()
   if vim.g.diagnostics_active then
     vim.g.diagnostics_active = false
-    vim.diagnostic.disable()
+    vim.diagnostic.enable(false)
   else
     vim.g.diagnostics_active = true
     vim.diagnostic.enable()
