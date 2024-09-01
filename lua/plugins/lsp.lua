@@ -74,6 +74,29 @@ nvim_lsp.jedi_language_server.setup {
     end;
 }
 
+nvim_lsp.rust_analyzer.setup({
+    settings = {
+        ["rust-analyzer"] = {
+            imports = {
+                granularity = {
+                    group = "module",
+                },
+                prefix = "self",
+            },
+            cargo = {
+                buildScripts = {
+                    enable = true,
+                },
+            },
+            procMacro = {
+                enable = true
+            },
+        }
+    }
+})
+
+nvim_lsp.gopls.setup({})
+
 -- null-ls
 -- check sources at: https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins
 null_ls.setup({
@@ -114,8 +137,9 @@ null_ls.setup({
       end,
     }),
 
-    -- =================================== GOLANG ==================================================
-    null_ls.builtins.formatting.gofmt,
+    -- =================================== RUST ====================================================
+    null_ls.builtins.formatting.rustfmt.with({
+      extra_args = { "--edition=2021" }
+    })
   },
 })
-
